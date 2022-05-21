@@ -21,7 +21,7 @@ class CosineAnnealingScheduler(Callback):
     def on_epoch_begin(self, epoch, logs=None):
         if epoch< self.num_to_start:
             return 
-        if epoch> self.boost_rate and  (epoch % self.boost_rate == 0 or epoch+1 % self.boost_rate == 0 ) :
+        if epoch>= self.boost_rate and  ((epoch % self.boost_rate == 0) or (epoch+1 % self.boost_rate == 0) ) :
             if not hasattr(self.model.optimizer, 'lr'):
                 raise ValueError('Optimizer must have a "lr" attribute.')
             lr = self.boost
