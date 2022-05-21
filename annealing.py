@@ -8,7 +8,7 @@ class CosineAnnealingScheduler(Callback):
     """Cosine annealing scheduler.
     """
 
-    def __init__(self, T_max, eta_max, eta_min=0, verbose=1,num_to_start=0,boost=50000000000,boost_rate=0.01):
+    def __init__(self, T_max, eta_max, eta_min=0, verbose=1,num_to_start=0,boost=0.1,boost_rate=50000000000):
         super(CosineAnnealingScheduler, self).__init__()
         self.T_max = T_max
         self.eta_max = eta_max
